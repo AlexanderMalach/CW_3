@@ -1,5 +1,6 @@
-import json
 import datetime
+import json
+
 from class_Print_history import Print_history
 
 
@@ -20,7 +21,8 @@ def check_error(word):
 
 
 def print_sorted_list(min_range=0, max_range=5):
-    """ Сортировка по убыванию дат, возварщает отсортированный список индексов  """
+    """ Сортировка по убыванию дат, возварщает отсортированный список индексов,
+    который используеться для создания экземпляров по убыванию дат """
 
     list_sort = list()
     for i in range(min_range, max_range):
