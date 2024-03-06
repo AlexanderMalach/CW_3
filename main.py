@@ -1,6 +1,6 @@
 from utils.class_Print_history import Print_history
-from utils.functions import import_json
-from utils.functions import print_sorted_list
+from utils.functions import import_json, print_sorted_list
+
 
 sort_list = print_sorted_list()
 list_dict = import_json()
