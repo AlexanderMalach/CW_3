@@ -1,5 +1,5 @@
 import datetime
-from utlis_.functions import check_error
+import functions
 
 
 class Print_history:
@@ -15,17 +15,17 @@ class Print_history:
         форматирует строку и возвращет дату в формате '%d.%m.%Y'"""
 
         self.date_slice = (self.dict_json).get('date')
-        if check_error(self.date_slice):
+        if functions.check_error(self.date_slice):
             self.date_print_datetime = datetime.datetime.strptime(self.date_slice[:10], "%Y-%m-%d")
-            self.date_print_point = self.date_print_datetime.strftime("%d-%m-%Y")
-            return self.date_print_point.replace('-', '.')
+            self.date_print_point = self.date_print_datetime.strftime("%d.%m.%Y")
+            return self.date_print_point
 
     def print_line(self, line_title):
         """ Запрашивает у словаря по ключу строку и возвращает её значение"""
 
         self.line_title = line_title
         self.line_output = self.dict_json.get(self.line_title)
-        if check_error(self.line_output):
+        if functions.check_error(self.line_output):
             return self.line_output
 
     def account_code(self, from_and_to):
@@ -34,7 +34,7 @@ class Print_history:
 
         self.from_and_to = from_and_to
         self.payment = (self.dict_json).get(self.from_and_to)
-        if check_error(self.payment):
+        if functions.check_error(self.payment):
             if "Счет" in self.payment:
                 return f'Счет **{self.payment[-4:]}'
             else:
@@ -43,7 +43,7 @@ class Print_history:
     def currency(self):
         """ Выводит занчение словаря operationAmount возварщает значенеи amount и name"""
         self.operation_amount = self.dict_json.get("operationAmount")
-        if check_error(self.operation_amount):
+        if functions.check_error(self.operation_amount):
             self.currency = self.operation_amount.get("currency")
-            if check_error(self.currency):
+            if functions.check_error(self.currency):
                 return self.operation_amount.get("amount") + ' ' + self.currency.get("name")
