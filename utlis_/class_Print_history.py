@@ -1,6 +1,5 @@
 import datetime
-
-from functions import check_error
+from utlis_.functions import check_error
 
 
 class Print_history:
