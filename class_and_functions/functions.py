@@ -1,6 +1,6 @@
 import json
 import datetime
-from Class_Print_history import Print_history
+from class_Print_history import Print_history
 
 
 def import_json():
