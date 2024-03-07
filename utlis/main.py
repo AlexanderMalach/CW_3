@@ -1,5 +1,5 @@
-from utlis_.class_Print_history import Print_history
-from utlis_.functions import import_json, print_sorted_list
+from utlis.class_Print_history import Print_history
+from utlis.f import import_json, print_sorted_list
 
 sort_list = print_sorted_list()
 
